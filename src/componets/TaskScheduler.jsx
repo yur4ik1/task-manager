@@ -24,7 +24,7 @@ const TaskScheduler = () => {
 
   return (
     <div>
-      <h1>Task Scheduler</h1>
+      <h1>Список завданнь</h1>
       <AddTaskForm onAddTask={handleAddTask} />
       {tasks.map((task) => (
         <TaskBlock

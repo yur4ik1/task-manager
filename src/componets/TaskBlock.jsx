@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 
 const TaskBlock = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
   const handleDelete = () => {
     // Delete the task from mockapi.io
@@ -14,18 +23,20 @@ const TaskBlock = (props) => {
         // Update the list of tasks in the parent component
         props.onDeleteTask(props.id);
       });
-      console.log(props.id)
+    console.log(props.id)
   };
 
   return (
-    <div>
-      <div onClick={() => setIsOpen(!isOpen)}>{props.title}</div>
-      {isOpen && (
-        <div>
-          <p>{props.description}</p>
-          <button onClick={handleDelete}>Delete Task</button>
-        </div>
-      )}
+    <div className="task-block">
+      <div className="task-block__title" onClick={handleOpenModal}>{props.title}</div>
+      <button className="task-block__delete-button" onClick={handleDelete}>
+        ×
+      </button>
+      <Modal isOpen={isOpen} onRequestClose={handleCloseModal}>
+        <h2 className="task-block__title">{props.title}</h2>
+        <div className="task-block__description">{props.description}</div>
+        <button onClick={handleCloseModal}>Close</button>
+      </Modal>
     </div>
   );
 };

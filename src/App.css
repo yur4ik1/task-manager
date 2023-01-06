@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.add-task-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-block {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task-block:hover {
+    background-color: #eee;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.task-block__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.task-block__description {
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-block__delete-button {
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s;
+}
+
+.task-block__delete-button:hover {
+    color: #666;
+}
+
+
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ReactModal__Content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 600px;
+    height: 400px;
+    overflow: auto;
+    padding: 20px;
+}
+
+.ReactModal__Content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ReactModal__Content button {
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s;
+    float: right;
+}
+
+.ReactModal__Content button:hover {
+    color: #666;
 }

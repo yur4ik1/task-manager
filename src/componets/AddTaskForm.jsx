@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const AddTaskForm = (props) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -27,7 +28,7 @@ const AddTaskForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='task-form' onSubmit={handleSubmit}>
       <label>
         Title:
         <input
