@@ -1,10 +1,10 @@
 import React from 'react';
-import TaskScheduler from './TaskScheduler';
+import TaskScheduler from './componets/TaskScheduler';
+
 
 function App() {
   return (
-    <div className="app-container">
-      <h1>Список завданнь</h1>
+    <div className="App">
       <TaskScheduler />
     </div>
   );
