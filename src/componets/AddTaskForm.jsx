@@ -53,9 +53,7 @@ const AddTaskForm = (props) => {
             backgroundColor: 'rgba(0, 0, 0, 0.75)',
           },
           content: {
-            backgroundColor: '#fff',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
+            borderRadius: '10px',
             height: 'fit-content',
           },
         }}
