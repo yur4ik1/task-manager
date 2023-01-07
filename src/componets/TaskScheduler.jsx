@@ -8,13 +8,12 @@ const TaskScheduler = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Load the list of tasks from mockapi.io
     fetch('https://63b882346f4d5660c6d855a4.mockapi.io/items')
       .then((response) => response.json())
       .then((data) => {
         setTasks(data);
+        setIsLoading(false);
       });
-    setIsLoading(false);
   }, []);
 
   const handleAddTask = (task) => {
@@ -30,19 +29,8 @@ const TaskScheduler = () => {
       <h1>Cписок завданнь 📑</h1>
       <AddTaskForm onAddTask={handleAddTask} />
       {isLoading ? (
-        <div className="task-blocks">
-          <div className="task-block fade-in">
-            <Skeleton height={50} width={300} />
-            <Skeleton height={20} width={200} />
-          </div>
-          <div className="task-block fade-in">
-            <Skeleton height={50} width={300} />
-            <Skeleton height={20} width={200} />
-          </div>
-          <div className="task-block fade-in">
-            <Skeleton height={50} width={300} />
-            <Skeleton height={20} width={200} />
-          </div>
+        <div className='task-scheduler-none fade-in'>
+          <p>Завантаження...</p>
         </div>
       ) : tasks.length > 0 ? (
         <div className="task-blocks">
