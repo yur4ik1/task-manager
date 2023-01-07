@@ -192,8 +192,8 @@ body {
     outline: none;
     transition: color 0.2s;
     position: absolute;
-    top: -6px;
-    left: 130px;
+    top: -2px;
+    left: 146px;
 }
 
 .task-block__delete-button:hover {
