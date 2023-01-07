@@ -27,6 +27,7 @@ const TaskScheduler = () => {
 
   return (
     <div className="task-scheduler">
+      <h1>Cписок завданнь 📑</h1>
       <AddTaskForm onAddTask={handleAddTask} />
       {isLoading ? (
         <div className="task-blocks">

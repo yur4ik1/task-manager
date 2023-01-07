@@ -35,7 +35,7 @@ const TaskBlock = (props) => {
       <Modal isOpen={isOpen} onRequestClose={handleCloseModal}>
         <h2 className="task-block__title">{props.title}</h2>
         <div className="task-block__description">{props.description}</div>
-        <button onClick={handleCloseModal}>Close</button>
+        <button className='task-block__btn' onClick={handleCloseModal}>×</button>
       </Modal>
     </div>
   );

@@ -1,11 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif;
     background: #e5e5e5;
 }
 
@@ -54,7 +50,7 @@ code {
 
 
 .ReactModal__Overlay {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75)!important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,10 +60,11 @@ code {
     background-color: #fff;
     border: none;
     border-radius: 4px;
-    width: 271px;
+    width: 84%;
     height: max-content;
     overflow: auto;
     padding: 20px;
+    height: 500px;
     inset: auto!important;
     top: 50px!important;
 }
@@ -75,7 +72,8 @@ code {
 .ReactModal__Content h2 {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
 .task__form-wrap-btn {
@@ -83,7 +81,7 @@ code {
     justify-content: center;
 }
 
-.ReactModal__Content button {
+.ReactModal__Content .task__form-btn {
     font-size: 14px;
     background-color: transparent;
     border: none;
@@ -96,10 +94,39 @@ code {
     height: 40px;
     background: #000;
     color: #fff;
+    border-radius: 100px;
 }
 
-.ReactModal__Content button:hover {
+.ReactModal__Content .task__form-btn:hover {
     color: #666;
+}
+
+.ReactModal__Content {
+    position: relative;
+}
+
+.task-block__btn {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    border-radius: 100%;
+    border: none;
+    font-size: 20px;
+    background: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-block__delete-button {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    border-radius: 100%;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .task-blocks {
@@ -109,8 +136,8 @@ code {
 }
 
 .task-block {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin: 10px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -127,7 +154,7 @@ code {
 }
 
 .task-block__title {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     margin-bottom: 10px;
     overflow-wrap: anywhere;
@@ -139,7 +166,7 @@ code {
 }
 
 .task-block__delete-button {
-    font-size: 14px;
+    font-size: 20px;
     background-color: transparent;
     border: none;
     color: #000;
@@ -147,8 +174,8 @@ code {
     outline: none;
     transition: color 0.2s;
     position: absolute;
-    top: -6px;
-    left: 88px;
+    top: -10px;
+    left: 97px;
 }
 
 .task-block__delete-button:hover {
@@ -158,6 +185,7 @@ code {
 .task-form {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .add__task-wrap {
@@ -168,17 +196,28 @@ code {
     padding-bottom: 30px;
 }
 
-.add__task-wrap button {
+.add__task-wrap .add__task-btn {
     display: block;
     border: none;
-    height: 40px;
-    width: 115px;
+    height: 50px;
+    width: 140px;
     cursor: pointer;
     background: #000;
     color: #fff;
+    border-radius: 100px;
 }
 
 .task-scheduler-none {
     display: flex;
     justify-content: center;
 }
+
+.task-scheduler-none p {
+    font-weight: bold;
+}
+
+.task-scheduler h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+

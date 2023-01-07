@@ -42,10 +42,10 @@ const AddTaskForm = (props) => {
 
     <div>
       <div className='add__task-wrap'>
-        <button onClick={handleOpenModal}>Add Task</button>
+        <button className='add__task-btn' onClick={handleOpenModal}>Додати завдання</button>
       </div>
 
-      <Modal isOpen={isModalOpen} onRequestClose={handleCloseModal}
+      <Modal isOpen={isModalOpen}
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.75)',
@@ -54,9 +54,13 @@ const AddTaskForm = (props) => {
             backgroundColor: '#fff',
             border: '1px solid #ccc',
             borderRadius: '4px',
+            height: 'fit-content',
           },
         }}
       >
+        <button className="form-block__delete-button" onClick={handleCloseModal}>
+          ×
+        </button>
         <form className='task-form' onSubmit={handleSubmit}>
           <p>Заголовок</p>
           <input
@@ -75,7 +79,7 @@ const AddTaskForm = (props) => {
             onChange={(event) => setDescription(event.target.value)}
           />
           <div className='task__form-wrap-btn'>
-            <button type="submit">Add Task</button>
+            <button className='task__form-btn' type="submit">Зберегти</button>
           </div>
 
         </form>
