@@ -27,12 +27,17 @@ const TaskBlock = (props) => {
   };
 
   return (
-    <div className="task-block fade-in">
-      <div className="task-block__title" onClick={handleOpenModal}>{props.title}</div>
-      <button className="task-block__delete-button" onClick={handleDelete}>
-        ×
-      </button>
-      <Modal className='fade-in' isOpen={isOpen} onRequestClose={handleCloseModal}>
+    <div>
+      <div className='pos-r'>
+        <div className="task-block fade-in" onClick={handleOpenModal}>
+          <div className="task-block__title">{props.title}</div>
+        </div>
+        <button className="task-block__delete-button" onClick={handleDelete}>
+          ×
+        </button>
+      </div>
+
+      <Modal className='fade-in task-block-modal' isOpen={isOpen} onRequestClose={handleCloseModal}>
         <h2 className="task-block__title">{props.title}</h2>
         <div className="task-block__description">{props.description}</div>
         <button className='task-block__btn' onClick={handleCloseModal}>×</button>
