@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-
+import Modal from 'react-modal';
 
 const AddTaskForm = (props) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,30 +35,53 @@ const AddTaskForm = (props) => {
     // Clear the form
     setTitle('');
     setDescription('');
+
   };
 
   return (
-    <form className='task-form' onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input
-          type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Description:
-        <input
-          type="text"
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        />
-      </label>
-      <br />
-      <button type="submit">Add Task</button>
-    </form>
+
+    <div>
+      <div className='add__task-wrap'>
+        <button onClick={handleOpenModal}>Add Task</button>
+      </div>
+
+      <Modal isOpen={isModalOpen} onRequestClose={handleCloseModal}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          },
+          content: {
+            backgroundColor: '#fff',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+          },
+        }}
+      >
+        <form className='task-form' onSubmit={handleSubmit}>
+          <p>Заголовок</p>
+          <input
+            placeholder="Заголовок"
+            type="text"
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+          />
+          <p>Текст завдання</p>
+          <textarea
+            placeholder="Текст завдання"
+            cols="30"
+            rows="10"
+            type="text"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+          <div className='task__form-wrap-btn'>
+            <button type="submit">Add Task</button>
+          </div>
+
+        </form>
+      </Modal>
+    </div>
+
   );
 };
 

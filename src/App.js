@@ -5,7 +5,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <TaskScheduler />
+      <div className='wrapper'>
+        <TaskScheduler />
+      </div>
     </div>
   );
 }
