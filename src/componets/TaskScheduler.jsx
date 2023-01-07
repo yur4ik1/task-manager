@@ -31,15 +31,15 @@ const TaskScheduler = () => {
       <AddTaskForm onAddTask={handleAddTask} />
       {isLoading ? (
         <div className="task-blocks">
-          <div className="task-block">
+          <div className="task-block fade-in">
             <Skeleton height={50} width={300} />
             <Skeleton height={20} width={200} />
           </div>
-          <div className="task-block">
+          <div className="task-block fade-in">
             <Skeleton height={50} width={300} />
             <Skeleton height={20} width={200} />
           </div>
-          <div className="task-block">
+          <div className="task-block fade-in">
             <Skeleton height={50} width={300} />
             <Skeleton height={20} width={200} />
           </div>
@@ -47,7 +47,7 @@ const TaskScheduler = () => {
       ) : tasks.length > 0 ? (
         <div className="task-blocks">
           {tasks.map((task) => (
-            <TaskBlock
+            <TaskBlock className='fade-in'
               key={task.id}
               id={task.id}
               title={task.title}
@@ -57,7 +57,7 @@ const TaskScheduler = () => {
           ))}
         </div>
       ) : (
-        <div className='task-scheduler-none'>
+        <div className='task-scheduler-none fade-in'>
           <p>Завданнь немає</p>
         </div>
       )}

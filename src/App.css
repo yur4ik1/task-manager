@@ -36,6 +36,7 @@ code {
 .task-form input::placeholder {
     color: #000;
 }
+
 .task-form textarea::placeholder {
     color: #000;
 }
@@ -50,7 +51,7 @@ code {
 
 
 .ReactModal__Overlay {
-    background-color: rgba(0, 0, 0, 0.75)!important;
+    background-color: rgba(0, 0, 0, 0.75) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,8 +66,8 @@ code {
     overflow: auto;
     padding: 20px;
     height: 500px;
-    inset: auto!important;
-    top: 50px!important;
+    inset: auto !important;
+    top: -91px !important;
 }
 
 .ReactModal__Content h2 {
@@ -79,6 +80,8 @@ code {
 .task__form-wrap-btn {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ReactModal__Content .task__form-btn {
@@ -136,8 +139,8 @@ code {
 }
 
 .task-block {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin: 10px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -174,8 +177,8 @@ code {
     outline: none;
     transition: color 0.2s;
     position: absolute;
-    top: -10px;
-    left: 97px;
+    top: -6px;
+    left: 115px;
 }
 
 .task-block__delete-button:hover {
@@ -221,3 +224,20 @@ code {
     margin-bottom: 0;
 }
 
+.task-saved {
+    font-size: 14px !important;
+}
+
+.fade-in {
+    animation: fade-in 0.3s linear;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
