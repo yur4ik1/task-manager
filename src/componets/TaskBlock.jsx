@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 
 const TaskBlock = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -23,6 +24,7 @@ const TaskBlock = (props) => {
         // Update the list of tasks in the parent component
         props.onDeleteTask(props.id);
       });
+    setIsDelete(true);
     console.log(props.id)
   };
 
@@ -30,7 +32,11 @@ const TaskBlock = (props) => {
     <div>
       <div className='pos-r'>
         <div className="task-block fade-in" onClick={handleOpenModal}>
-          <div className="task-block__title">{props.title}</div>
+          {isDelete ? (
+            <div className="task-block__title">Видалення...</div>
+          ) : (
+            <div className="task-block__title">{props.title}</div>
+          )}
         </div>
         <button className="task-block__delete-button" onClick={handleDelete}>
           ×
